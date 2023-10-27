@@ -1,8 +1,8 @@
 const axios = require("axios");
 const { Item } = require("../../config/mongoose");
 
-const OMDB_API_URL = "https://www.omdbapi.com";
-const OMDB_API_KEY = "64294c0c";
+const OMDB_API_URL = process.env.OMDB_API_URL;
+const OMDB_API_KEY = process.env.OMDB_API_KEY;
 
 async function fetchMovieData(movie_title) {
   const OMDBResponse = await axios.get(OMDB_API_URL, {
